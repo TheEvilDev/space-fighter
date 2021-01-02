@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/space-fighter/static/css/main.b6b88415.chunk.css",
-    "main.js": "/space-fighter/static/js/main.01175a52.chunk.js",
-    "main.js.map": "/space-fighter/static/js/main.01175a52.chunk.js.map",
+    "main.js": "/space-fighter/static/js/main.c66ccd48.chunk.js",
+    "main.js.map": "/space-fighter/static/js/main.c66ccd48.chunk.js.map",
     "runtime-main.js": "/space-fighter/static/js/runtime-main.2f09db5a.js",
     "runtime-main.js.map": "/space-fighter/static/js/runtime-main.2f09db5a.js.map",
     "static/js/2.a9d13dcb.chunk.js": "/space-fighter/static/js/2.a9d13dcb.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2f09db5a.js",
     "static/js/2.a9d13dcb.chunk.js",
     "static/css/main.b6b88415.chunk.css",
-    "static/js/main.01175a52.chunk.js"
+    "static/js/main.c66ccd48.chunk.js"
   ]
 }
