@@ -1,20 +1,23 @@
 import { enemyPositionState } from "gameState";
+import Loading from "objects/ArWing/Loading";
+import React, { Suspense } from "react";
 import { useRecoilValue } from "recoil";
+import CreepyFace from '../creepy-face';
 
 // Manages Drawing enemies that currently exist in state
 function Enemies() {
-    const enemies = useRecoilValue(enemyPositionState);
-    return (
-      <group>
-        {enemies.map((enemy) => (
-          <mesh position={[enemy.x, enemy.y, enemy.z]} key={`${enemy.x}`}>
-            <sphereBufferGeometry attach="geometry" args={[2, 8, 8]} />
-            <meshStandardMaterial attach="material" color="white" wireframe />
-          </mesh>
-        ))}
-      </group>
-    );
-  }
+  const enemies = useRecoilValue(enemyPositionState);
+  return (
+    <group>
+      {enemies.map((enemy) => (
+        <Suspense fallback={<Loading />}>
+          <CreepyFace position={enemy} key={`${enemy.x}`}></CreepyFace>
+        </Suspense>
+      ))}
+    </group>
+  );
+}
 
-  export default Enemies;
-  
+export default Enemies;
+
+

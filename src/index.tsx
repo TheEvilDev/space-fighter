@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { extend } from "react-three-fiber";
-
-extend({ OrbitControls });
 
 ReactDOM.render(
   <React.StrictMode>

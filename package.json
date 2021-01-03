@@ -4,9 +4,11 @@
   "private": true,
   "homepage": "http://TheEvilDev.github.io/space-fighter",
   "dependencies": {
+    "@react-three/xr": "^1.1.1",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "debug": "^4.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-promise-suspense": "^0.3.3",
@@ -18,7 +20,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "PUBLIC_URL=/ react-scripts start",
+    "start": "PUBLIC_URL=/ HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

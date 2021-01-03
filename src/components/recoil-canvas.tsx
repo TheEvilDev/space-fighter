@@ -1,16 +1,17 @@
 import React from "react";
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE } from "recoil";
-import { Canvas } from "react-three-fiber";
+import { VRCanvas } from '@react-three/xr'
+
 
 const RecoilCanvas = ({ children, ...props}) => {
   const RecoilBridge = useRecoilBridgeAcrossReactRoots_UNSTABLE();
 
   return (
-    <Canvas {...props}>
+    <VRCanvas {...props}>
       <RecoilBridge>
         {children}
       </RecoilBridge>
-    </Canvas>
+    </VRCanvas>
   );
 }
 

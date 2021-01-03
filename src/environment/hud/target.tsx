@@ -1,5 +1,6 @@
 // Draws two sprites in front of the ship, indicating the direction of fire.
 
+import { useController } from "@react-three/xr";
 import { useRef } from "react";
 import { useFrame } from "react-three-fiber";
 import { TextureLoader } from "three";
@@ -9,6 +10,10 @@ function Target() {
     // Create refs for the two sprites we will create.
     const rearTarget = useRef(null);
     const frontTarget = useRef(null);
+
+    const rightController = useController('right');
+
+    console.log(rightController);
   
     const loader = new TextureLoader();
     // A png with transparency to use as the target sprite.
@@ -18,11 +23,11 @@ function Target() {
     // Its movement in both axis is exagerated since its farther in front. The end result should be the appearance that the
     // two targets are aligned with the ship in the direction of laser fire.
     useFrame(({ mouse }) => {
-      rearTarget.current.position.y = -mouse.y * 10;
-      rearTarget.current.position.x = -mouse.x * 30;
+      rearTarget.current.position.y = mouse.y * 10;
+      rearTarget.current.position.x = mouse.x * 30;
   
-      frontTarget.current.position.y = -mouse.y * 20;
-      frontTarget.current.position.x = -mouse.x * 60;
+      frontTarget.current.position.y = mouse.y * 20;
+      frontTarget.current.position.x = mouse.x * 60;
     });
     // Return a group containing two sprites. One positioned eight units in front of the ship, and the other 16 in front.
     // We give the spriteMaterial a map prop with the loaded sprite texture as a value/

@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
+
 import {
   useFrame,
   useThree,
@@ -12,24 +14,17 @@ const CameraControls = () => {
       camera,
       gl: { domElement },
     } = useThree();
-    // Ref to the controls, so that we can update them on every frame using useFrame
-    const controls = useRef();
-    useFrame(() => {
-        const current = controls.current as any;
-        if (current) {
-            current.update();
-        }
-    });
 
-    return <orbitControls 
-                ref={controls} 
-                args={[camera, domElement]}
-                enableZoom={false}
-                maxAzimuthAngle={Math.PI / 4}
-                maxPolarAngle={Math.PI}
-                minAzimuthAngle={-Math.PI / 4}
-                minPolarAngle={0}
-            />;
+    useEffect(() => {
+      const controls = new PointerLockControls(camera, domElement);
+      controls.connect();
+
+      return () => {
+        controls.disconnect();
+      };
+    }, [camera, domElement]);
+
+    return null;
   };
 
 export default CameraControls;

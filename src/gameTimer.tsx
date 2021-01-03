@@ -46,7 +46,7 @@ function distance(p1, p2) {
       // Move all of the enemies. Remove enemies that have been destroyed, or that have passed the player.
       setEnemies(
         enemies
-          .map((enemy) => ({ x: enemy.x, y: enemy.y, z: enemy.z + ENEMY_SPEED }))
+          .map((enemy) => ({ x: enemy.x, y: enemy.y, z: enemy.z }))
           .filter((enemy, idx) => !hitEnemies[idx] && enemy.z < 0)
       );
       // Move the Lasers and remove lasers at end of range or that have hit the ground.

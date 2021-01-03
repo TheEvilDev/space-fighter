@@ -14,6 +14,8 @@ import GameTimer from "gameTimer";
 import ScoreCard from "environment/hud/score-card";
 import RecoilCanvas from "components/recoil-canvas";
 import SkyBox from "environment/sky-box";
+import { DefaultXRControllers, Hands } from "@react-three/xr";
+import EventLogger from "objects/event-logger";
 
 
 export default function App() {
@@ -21,14 +23,16 @@ export default function App() {
       <RecoilRoot>
         <ScoreCard />
         <RecoilCanvas style={{ background: "#171717" }}>
-          <CameraControls />
+          <DefaultXRControllers />
+          <Hands />
           <directionalLight intensity={0.5} />
-          <Suspense fallback={<Loading />}>
+          {/* <Suspense fallback={<Loading />}>
             <ArWing />
-          </Suspense>
+          </Suspense> */}
           <Target />
+          <EventLogger />
+          <Terrain />
           <Lasers />
-          <SkyBox />
           <LaserController />
           <Enemies />
           <GameTimer />

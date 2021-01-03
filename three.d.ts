@@ -1,5 +1,6 @@
 declare module JSX {
     interface IntrinsicElements {
-        orbitControls: any
+        orbitControls: any,
+        pointerLockControls: any
     }
 }

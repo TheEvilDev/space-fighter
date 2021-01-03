@@ -6,12 +6,15 @@ interface Point {
     z?: number
 };
 
-
-
 export const shipPositionState = atom({
     key: "shipPosition", // unique ID (with respect to other atoms/selectors)
     default: { position: {} as Point, rotation: {} as Point }, // default value (aka initial value)
 });
+
+export const playerPositionState = atom({
+    key: "playerPosition",
+    default: { position: {} as Point, rotation: {} as Point }, // default value (aka initial value)
+})
 
 export const enemyPositionState = atom({
     key: "enemyPosition", // unique ID (with respect to other atoms/selectors)
